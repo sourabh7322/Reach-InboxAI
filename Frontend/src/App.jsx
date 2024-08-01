@@ -5,7 +5,7 @@ import { store } from './Store/store'; // Ensure the import is consistent
 import ProtectedRoute from './components/protectedRoute/protectedRoute'; // Rename to PascalCase
 import DashBoard from './components/Dashboard/DashBoard';
 import Homepage from './components/Homepage/Homepage';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/NavBar/NavBar'
 import { Auth0Provider } from '@auth0/auth0-react';
 import useListener from './components/auth2/useListenerAuth/useListener';
 
@@ -31,7 +31,7 @@ function AppContent() {
    const auth = useListener();
    const routes = [
       {
-         path: "*",
+         path: "/homepage",
          element: <Homepage />,
       },
       {
@@ -42,9 +42,9 @@ function AppContent() {
    const elementRoute = useRoutes(routes); // Correctly use `routes`
 
    return (
-      <div className='flex flex-col'>
+      <div >
          <NavBar />
-         <div className='w-full h-screen flex flex-col pt-12'>
+         <div >
             {elementRoute}
          </div>
       </div>
